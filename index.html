@@ -142,97 +142,99 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:'Barlow'
 </div>
 
 <script>
-const FLAGS={'México':'🇲🇽','Coreia do Sul':'🇰🇷','África do Sul':'🇿🇦','Rep. Tcheca / Din. / Irl. / Mac.N.':'🏳️','Canadá':'🇨🇦','Catar':'🇶🇦','Suíça':'🇨🇭','Itália / B-H / P.Gales / I.Norte':'🏳️','Estados Unidos':'🇺🇸','Austrália':'🇦🇺','Tur. / Rom. / Eslov. / Kosovo':'🏳️','Paraguai':'🇵🇾','Brasil':'🇧🇷','Marrocos':'🇲🇦','Haiti':'🇭🇹','Escócia':'🏴󠁧󠁢󠁳󠁣󠁴󠁿','Alemanha':'🇩🇪','Costa do Marfim':'🇨🇮','Equador':'🇪🇨','Curaçao':'🇨🇼','Holanda':'🇳🇱','Japão':'🇯🇵','Ucr. / Sue. / Pol. / Alb.':'🏳️','Tunísia':'🇹🇳','Espanha':'🇪🇸','Bélgica':'🇧🇪','Cabo Verde':'🇨🇻','Arábia Saudita':'🇸🇦','Irã':'🇮🇷','Nova Zelândia':'🇳🇿','Egito':'🇪🇬','Uruguai':'🇺🇾','Argentina':'🇦🇷','França':'🇫🇷','Argélia':'🇩🇿','Noruega':'🇳🇴','Senegal':'🇸🇳','Irq. / Bol. / Sur.':'🏳️','Portugal':'🇵🇹','Inglaterra':'🏴󠁧󠁢󠁥󠁮󠁧󠁿','Croácia':'🇭🇷','Gana':'🇬🇳','Panamá':'🇵🇦','Uzbequistão':'🇺🇿','Colômbia':'🇨🇴','Áustria':'🇦🇹','Jordânia':'🇯🇴','RD Congo / Jam. / N.Cal.':'🏳️'};
+const FLAGS={'México':'🇲🇽','Coreia do Sul':'🇰🇷','África do Sul':'🇿🇦','República Tcheca':'🇨🇿','Canadá':'🇨🇦','Catar':'🇶🇦','Suíça':'🇨🇭','Bósnia e Herzegovina':'🇧🇦','Estados Unidos':'🇺🇸','Austrália':'🇦🇺','Turquia':'🇹🇷','Paraguai':'🇵🇾','Brasil':'🇧🇷','Marrocos':'🇲🇦','Haiti':'🇭🇹','Escócia':'🏴󠁧󠁢󠁳󠁣󠁴󠁿','Alemanha':'🇩🇪','Costa do Marfim':'🇨🇮','Equador':'🇪🇨','Curaçao':'🇨🇼','Holanda':'🇳🇱','Japão':'🇯🇵','Suécia':'🇸🇪','Tunísia':'🇹🇳','Espanha':'🇪🇸','Bélgica':'🇧🇪','Cabo Verde':'🇨🇻','Arábia Saudita':'🇸🇦','Irã':'🇮🇷','Nova Zelândia':'🇳🇿','Egito':'🇪🇬','Uruguai':'🇺🇾','Argentina':'🇦🇷','França':'🇫🇷','Argélia':'🇩🇿','Noruega':'🇳🇴','Senegal':'🇸🇳','Iraque':'🇮🇶','Portugal':'🇵🇹','Inglaterra':'🏴󠁧󠁢󠁥󠁮󠁧󠁿','Croácia':'🇭🇷','Gana':'🇬🇳','Panamá':'🇵🇦','Uzbequistão':'🇺🇿','Colômbia':'🇨🇴','Áustria':'🇦🇹','Jordânia':'🇯🇴','RD Congo':'🇨🇩'};
 function fl(n){return FLAGS[n]||'🏳️';}
 
 const J=[
   {g:'A',r:1,dt:'2026-06-11T16:00',c:'México',v:'África do Sul',l:'Cidade do México'},
-  {g:'A',r:1,dt:'2026-06-11T23:00',c:'Coreia do Sul',v:'Rep. Tcheca / Din. / Irl. / Mac.N.',l:'Guadalajara'},
-  {g:'B',r:1,dt:'2026-06-12T16:00',c:'Canadá',v:'Itália / B-H / P.Gales / I.Norte',l:'Toronto'},
+  {g:'A',r:1,dt:'2026-06-11T23:00',c:'Coreia do Sul',v:'República Tcheca',l:'Guadalajara'},
+  {g:'B',r:1,dt:'2026-06-12T16:00',c:'Canadá',v:'Bósnia e Herzegovina',l:'Toronto'},
   {g:'C',r:1,dt:'2026-06-12T22:00',c:'Estados Unidos',v:'Paraguai',l:'Los Angeles'},
-  {g:'C',r:1,dt:'2026-06-13T01:00',c:'Austrália',v:'Tur. / Rom. / Eslov. / Kosovo',l:'Vancouver'},
+  {g:'C',r:1,dt:'2026-06-13T01:00',c:'Austrália',v:'Turquia',l:'Vancouver'},
   {g:'B',r:1,dt:'2026-06-13T16:00',c:'Catar',v:'Suíça',l:'San Francisco'},
   {g:'D',r:1,dt:'2026-06-13T19:00',c:'Brasil',v:'Marrocos',l:'Nova York/NJ',b:1},
   {g:'D',r:1,dt:'2026-06-13T22:00',c:'Haiti',v:'Escócia',l:'Boston'},
   {g:'E',r:1,dt:'2026-06-14T14:00',c:'Alemanha',v:'Curaçao',l:'Houston'},
   {g:'F',r:1,dt:'2026-06-14T17:00',c:'Holanda',v:'Japão',l:'Dallas'},
   {g:'E',r:1,dt:'2026-06-14T20:00',c:'Costa do Marfim',v:'Equador',l:'Filadélfia'},
-  {g:'F',r:1,dt:'2026-06-14T23:00',c:'Ucr. / Sue. / Pol. / Alb.',v:'Tunísia',l:'Monterrey'},
+  {g:'F',r:1,dt:'2026-06-14T23:00',c:'Suécia',v:'Tunísia',l:'Monterrey'},
   {g:'G',r:1,dt:'2026-06-15T13:00',c:'Espanha',v:'Cabo Verde',l:'Atlanta'},
   {g:'G',r:1,dt:'2026-06-15T16:00',c:'Bélgica',v:'Egito',l:'Seattle'},
   {g:'K',r:1,dt:'2026-06-15T19:00',c:'Arábia Saudita',v:'Uruguai',l:'Miami'},
   {g:'G',r:1,dt:'2026-06-15T22:00',c:'Irã',v:'Nova Zelândia',l:'Los Angeles'},
   {g:'H',r:1,dt:'2026-06-16T14:00',c:'Argentina',v:'Argélia',l:'Kansas City'},
-  {g:'H',r:1,dt:'2026-06-16T16:00',c:'França',v:'Senegal',l:'Nova York/NJ'},
-  {g:'H',r:1,dt:'2026-06-16T19:00',c:'Irq. / Bol. / Sur.',v:'Noruega',l:'Boston'},
-  {g:'I',r:1,dt:'2026-06-17T01:00',c:'Áustria',v:'Jordânia',l:'San Francisco'},
-  {g:'I',r:1,dt:'2026-06-17T14:00',c:'Portugal',v:'RD Congo / Jam. / N.Cal.',l:'Houston'},
-  {g:'J',r:1,dt:'2026-06-17T17:00',c:'Inglaterra',v:'Croácia',l:'Dallas'},
-  {g:'J',r:1,dt:'2026-06-17T20:00',c:'Gana',v:'Panamá',l:'Toronto'},
-  {g:'L',r:1,dt:'2026-06-17T23:00',c:'Uzbequistão',v:'Colômbia',l:'Cidade do México'},
-  {g:'A',r:2,dt:'2026-06-18T13:00',c:'Rep. Tcheca / Din. / Irl. / Mac.N.',v:'África do Sul',l:'Atlanta'},
-  {g:'B',r:2,dt:'2026-06-18T16:00',c:'Suíça',v:'Itália / B-H / P.Gales / I.Norte',l:'Los Angeles'},
+  {g:'I',r:1,dt:'2026-06-16T16:00',c:'França',v:'Senegal',l:'Nova York/NJ'},
+  {g:'I',r:1,dt:'2026-06-16T19:00',c:'Iraque',v:'Noruega',l:'Boston'},
+  {g:'J',r:1,dt:'2026-06-17T01:00',c:'Áustria',v:'Jordânia',l:'San Francisco'},
+  {g:'K',r:1,dt:'2026-06-17T14:00',c:'Portugal',v:'RD Congo',l:'Houston'},
+  {g:'L',r:1,dt:'2026-06-17T17:00',c:'Inglaterra',v:'Croácia',l:'Dallas'},
+  {g:'L',r:1,dt:'2026-06-17T20:00',c:'Gana',v:'Panamá',l:'Toronto'},
+  {g:'K',r:1,dt:'2026-06-17T23:00',c:'Uzbequistão',v:'Colômbia',l:'Cidade do México'},
+  {g:'A',r:2,dt:'2026-06-18T13:00',c:'República Tcheca',v:'África do Sul',l:'Atlanta'},
+  {g:'B',r:2,dt:'2026-06-18T16:00',c:'Suíça',v:'Bósnia e Herzegovina',l:'Los Angeles'},
   {g:'B',r:2,dt:'2026-06-18T19:00',c:'Canadá',v:'Catar',l:'Vancouver'},
   {g:'A',r:2,dt:'2026-06-18T22:00',c:'México',v:'Coreia do Sul',l:'Guadalajara'},
-  {g:'C',r:2,dt:'2026-06-19T01:00',c:'Tur. / Rom. / Eslov. / Kosovo',v:'Paraguai',l:'San Francisco'},
+  {g:'C',r:2,dt:'2026-06-19T01:00',c:'Turquia',v:'Paraguai',l:'San Francisco'},
   {g:'C',r:2,dt:'2026-06-19T16:00',c:'Estados Unidos',v:'Austrália',l:'Seattle'},
   {g:'D',r:2,dt:'2026-06-19T19:00',c:'Escócia',v:'Marrocos',l:'Boston'},
   {g:'D',r:2,dt:'2026-06-19T22:00',c:'Brasil',v:'Haiti',l:'Filadélfia',b:1},
-  {g:'F',r:2,dt:'2026-06-20T14:00',c:'Holanda',v:'Ucr. / Sue. / Pol. / Alb.',l:'Houston'},
+  {g:'F',r:2,dt:'2026-06-20T14:00',c:'Holanda',v:'Suécia',l:'Houston'},
   {g:'E',r:2,dt:'2026-06-20T17:00',c:'Alemanha',v:'Costa do Marfim',l:'Toronto'},
   {g:'E',r:2,dt:'2026-06-20T21:00',c:'Equador',v:'Curaçao',l:'Kansas City'},
   {g:'F',r:2,dt:'2026-06-21T01:00',c:'Tunísia',v:'Japão',l:'Monterrey'},
   {g:'G',r:2,dt:'2026-06-21T13:00',c:'Espanha',v:'Arábia Saudita',l:'Atlanta'},
   {g:'G',r:2,dt:'2026-06-21T16:00',c:'Bélgica',v:'Irã',l:'Los Angeles'},
   {g:'K',r:2,dt:'2026-06-21T19:00',c:'Uruguai',v:'Cabo Verde',l:'Miami'},
-  {g:'K',r:2,dt:'2026-06-21T22:00',c:'Nova Zelândia',v:'Egito',l:'Vancouver'},
+  {g:'G',r:2,dt:'2026-06-21T22:00',c:'Nova Zelândia',v:'Egito',l:'Vancouver'},
   {g:'H',r:2,dt:'2026-06-22T14:00',c:'Argentina',v:'Áustria',l:'Dallas'},
-  {g:'H',r:2,dt:'2026-06-22T18:00',c:'França',v:'Irq. / Bol. / Sur.',l:'Filadélfia'},
-  {g:'H',r:2,dt:'2026-06-22T21:00',c:'Noruega',v:'Senegal',l:'Nova York/NJ'},
-  {g:'I',r:2,dt:'2026-06-23T00:00',c:'Jordânia',v:'Argélia',l:'San Francisco'},
-  {g:'I',r:2,dt:'2026-06-23T14:00',c:'Portugal',v:'Uzbequistão',l:'Houston'},
-  {g:'J',r:2,dt:'2026-06-23T17:00',c:'Inglaterra',v:'Gana',l:'Boston'},
-  {g:'J',r:2,dt:'2026-06-23T20:00',c:'Panamá',v:'Croácia',l:'Toronto'},
-  {g:'L',r:2,dt:'2026-06-23T23:00',c:'Colômbia',v:'RD Congo / Jam. / N.Cal.',l:'Guadalajara'},
+  {g:'I',r:2,dt:'2026-06-22T18:00',c:'França',v:'Iraque',l:'Filadélfia'},
+  {g:'I',r:2,dt:'2026-06-22T21:00',c:'Noruega',v:'Senegal',l:'Nova York/NJ'},
+  {g:'J',r:2,dt:'2026-06-23T00:00',c:'Jordânia',v:'Argélia',l:'San Francisco'},
+  {g:'K',r:2,dt:'2026-06-23T14:00',c:'Portugal',v:'Uzbequistão',l:'Houston'},
+  {g:'L',r:2,dt:'2026-06-23T17:00',c:'Inglaterra',v:'Gana',l:'Boston'},
+  {g:'L',r:2,dt:'2026-06-23T20:00',c:'Panamá',v:'Croácia',l:'Toronto'},
+  {g:'K',r:2,dt:'2026-06-23T23:00',c:'Colômbia',v:'RD Congo',l:'Guadalajara'},
   {g:'B',r:3,dt:'2026-06-24T16:00',c:'Suíça',v:'Canadá',l:'Vancouver'},
-  {g:'B',r:3,dt:'2026-06-24T16:00',c:'Itália / B-H / P.Gales / I.Norte',v:'Catar',l:'Seattle'},
+  {g:'B',r:3,dt:'2026-06-24T16:00',c:'Bósnia e Herzegovina',v:'Catar',l:'Seattle'},
   {g:'D',r:3,dt:'2026-06-24T19:00',c:'Escócia',v:'Brasil',l:'Miami',b:1},
   {g:'D',r:3,dt:'2026-06-24T19:00',c:'Marrocos',v:'Haiti',l:'Atlanta'},
-  {g:'A',r:3,dt:'2026-06-24T22:00',c:'Rep. Tcheca / Din. / Irl. / Mac.N.',v:'México',l:'Cidade do México'},
+  {g:'A',r:3,dt:'2026-06-24T22:00',c:'República Tcheca',v:'México',l:'Cidade do México'},
   {g:'A',r:3,dt:'2026-06-24T22:00',c:'África do Sul',v:'Coreia do Sul',l:'Monterrey'},
   {g:'E',r:3,dt:'2026-06-25T17:00',c:'Equador',v:'Alemanha',l:'Nova York/NJ'},
   {g:'E',r:3,dt:'2026-06-25T17:00',c:'Curaçao',v:'Costa do Marfim',l:'Filadélfia'},
-  {g:'F',r:3,dt:'2026-06-25T20:00',c:'Japão',v:'Ucr. / Sue. / Pol. / Alb.',l:'Dallas'},
+  {g:'F',r:3,dt:'2026-06-25T20:00',c:'Japão',v:'Suécia',l:'Dallas'},
   {g:'F',r:3,dt:'2026-06-25T20:00',c:'Tunísia',v:'Holanda',l:'Kansas City'},
-  {g:'C',r:3,dt:'2026-06-25T23:00',c:'Tur. / Rom. / Eslov. / Kosovo',v:'Estados Unidos',l:'Los Angeles'},
+  {g:'C',r:3,dt:'2026-06-25T23:00',c:'Turquia',v:'Estados Unidos',l:'Los Angeles'},
   {g:'C',r:3,dt:'2026-06-25T23:00',c:'Paraguai',v:'Austrália',l:'San Francisco'},
-  {g:'H',r:3,dt:'2026-06-26T16:00',c:'Noruega',v:'França',l:'Boston'},
-  {g:'H',r:3,dt:'2026-06-26T16:00',c:'Senegal',v:'Irq. / Bol. / Sur.',l:'Toronto'},
+  {g:'I',r:3,dt:'2026-06-26T16:00',c:'Noruega',v:'França',l:'Boston'},
+  {g:'I',r:3,dt:'2026-06-26T16:00',c:'Senegal',v:'Iraque',l:'Toronto'},
   {g:'G',r:3,dt:'2026-06-26T21:00',c:'Cabo Verde',v:'Arábia Saudita',l:'Houston'},
   {g:'K',r:3,dt:'2026-06-26T21:00',c:'Uruguai',v:'Espanha',l:'Guadalajara'},
   {g:'G',r:3,dt:'2026-06-27T00:00',c:'Egito',v:'Irã',l:'Seattle'},
   {g:'K',r:3,dt:'2026-06-27T00:00',c:'Nova Zelândia',v:'Bélgica',l:'Vancouver'},
-  {g:'J',r:3,dt:'2026-06-27T18:00',c:'Panamá',v:'Inglaterra',l:'Nova York/NJ'},
-  {g:'J',r:3,dt:'2026-06-27T18:00',c:'Croácia',v:'Gana',l:'Filadélfia'},
-  {g:'L',r:3,dt:'2026-06-27T20:30',c:'Colômbia',v:'Portugal',l:'Miami'},
-  {g:'L',r:3,dt:'2026-06-27T20:30',c:'RD Congo / Jam. / N.Cal.',v:'Uzbequistão',l:'Atlanta'},
-  {g:'I',r:3,dt:'2026-06-27T23:00',c:'Argélia',v:'Áustria',l:'Kansas City'},
-  {g:'I',r:3,dt:'2026-06-27T23:00',c:'Jordânia',v:'Argentina',l:'Dallas'},
+  {g:'L',r:3,dt:'2026-06-27T18:00',c:'Panamá',v:'Inglaterra',l:'Nova York/NJ'},
+  {g:'L',r:3,dt:'2026-06-27T18:00',c:'Croácia',v:'Gana',l:'Filadélfia'},
+  {g:'K',r:3,dt:'2026-06-27T20:30',c:'Colômbia',v:'Portugal',l:'Miami'},
+  {g:'K',r:3,dt:'2026-06-27T20:30',c:'RD Congo',v:'Uzbequistão',l:'Atlanta'},
+  {g:'J',r:3,dt:'2026-06-27T23:00',c:'Argélia',v:'Áustria',l:'Kansas City'},
+  {g:'J',r:3,dt:'2026-06-27T23:00',c:'Jordânia',v:'Argentina',l:'Dallas'},
+  {g:'H',r:3,dt:'2026-06-27T16:00',c:'Argentina',v:'Argélia',l:'Kansas City'},
+  {g:'H',r:3,dt:'2026-06-27T16:00',c:'Áustria',v:'Jordânia',l:'Dallas'},
 ];
 
 const GRUPOS={
-  A:{t:['México','Coreia do Sul','África do Sul','Rep. Tcheca / Din. / Irl. / Mac.N.']},
-  B:{t:['Canadá','Suíça','Catar','Itália / B-H / P.Gales / I.Norte']},
-  C:{t:['Estados Unidos','Austrália','Paraguai','Tur. / Rom. / Eslov. / Kosovo']},
+  A:{t:['México','Coreia do Sul','África do Sul','República Tcheca']},
+  B:{t:['Canadá','Suíça','Catar','Bósnia e Herzegovina']},
+  C:{t:['Estados Unidos','Austrália','Paraguai','Turquia']},
   D:{t:['Brasil','Marrocos','Escócia','Haiti']},
   E:{t:['Alemanha','Costa do Marfim','Equador','Curaçao']},
-  F:{t:['Holanda','Japão','Tunísia','Ucr. / Sue. / Pol. / Alb.']},
+  F:{t:['Holanda','Japão','Tunísia','Suécia']},
   G:{t:['Espanha','Bélgica','Cabo Verde','Irã']},
-  H:{t:['Argentina','França','Noruega','Irq. / Bol. / Sur.']},
-  I:{t:['Portugal','Jordânia','Áustria','Argélia']},
+  H:{t:['Argentina','Áustria','Argélia','Jordânia']},
+  I:{t:['França','Senegal','Noruega','Iraque']},
   J:{t:['Inglaterra','Croácia','Gana','Panamá']},
-  K:{t:['Uruguai','Arábia Saudita','Egito','Nova Zelândia']},
-  L:{t:['Colômbia','Uzbequistão','RD Congo / Jam. / N.Cal.','Cabo Verde alt.']},
+  K:{t:['Portugal','Uzbequistão','Colômbia','RD Congo']},
+  L:{t:['Uruguai','Arábia Saudita','Egito','Nova Zelândia']},
 };
 
 const MM=[
@@ -288,40 +290,6 @@ function flong(dt){return dt.toLocaleDateString('pt-BR',{weekday:'long',day:'2-d
 function fcurta(dt){return dt.toLocaleDateString('pt-BR',{day:'2-digit',month:'short'}).replace('.','');}
 function st(dt){const n=new Date(),d=(dt-n)/60000;if(d>0&&d<=110)return'v';if(d<=0)return'e';return'p';}
 function ish(dt){return dk(dt)===hoje();}
-
-function destaque(){
-  const now=new Date();
-  const s=[...J].map(j=>({...j,o:pd(j.dt)})).sort((a,b)=>a.o-b.o);
-  let d=s.find(j=>st(j.o)==='v')||s.find(j=>j.o>=now)||s[s.length-1];
-  if(!d)return'';
-  const ss=st(d.o),eh=ish(d.o);
-  const stHtml=ss==='v'?`<span class="s-vivo pulse">AO VIVO</span>`:eh?`<span class="s-hoje">HOJE</span>`:`<span class="s-data">${fcurta(d.o)}</span>`;
-  const mid=ss==='e'?`<div class="d-score">- × -</div>`:ss==='v'?`<div class="d-score">? × ?</div>`:`<div class="d-hora">${fhora(d.o)}</div>`;
-  return`<div class="destaque-wrap"><div class="destaque-card${ss==='v'?' vivo':''}${d.b?' br-next':''}">
-    <div class="destaque-top"><span class="d-label">${ss==='v'?'Ao vivo':ss==='e'?'Encerrado':'Próximo jogo'} · Grupo ${d.g}</span>${stHtml}</div>
-    <div class="destaque-times">
-      <div class="d-time"><span class="d-flag">${fl(d.c)}</span><span class="d-nome">${d.c}</span></div>
-      <div>${mid}</div>
-      <div class="d-time"><span class="d-flag">${fl(d.v)}</span><span class="d-nome">${d.v}</span></div>
-    </div>
-    <div class="d-info">${d.l} · ${flong(d.o)}</div>
-  </div></div>`;
-}
-
-function jogoCard(j,sg=true){
-  const o=pd(j.dt),ss=st(o),eh=ish(o);
-  const badge=ss==='v'?`<span class="bv">● AO VIVO</span>`:ss==='e'?`<span class="be">Encerrado</span>`:eh?`<span class="bh">Hoje</span>`:`<span class="bp">${fcurta(o)}</span>`;
-  const mid=ss==='e'?`<span class="jt-score">- × -</span>`:ss==='v'?`<span class="jt-score">? × ?</span>`:`<span class="jt-hora${eh?' hj':''}">${fhora(o)}</span>`;
-  const meta=sg?`Grupo ${j.g} · R${j.r} · ${j.l}`:`R${j.r} · ${j.l}`;
-  return`<div class="jc${j.b?' br':''}${ss==='v'?' vv':''}">
-    <div class="jc-meta"><span class="jc-grp">${meta}</span>${badge}</div>
-    <div class="jc-row">
-      <div class="jt"><span class="jt-flag">${fl(j.c)}</span><span class="jt-nome">${j.c}</span></div>
-      <div class="jt-mid">${mid}</div>
-      <div class="jt v"><span class="jt-flag">${fl(j.v)}</span><span class="jt-nome">${j.v}</span></div>
-    </div>
-  </div>`;
-}
 
 function abaJogos(){
   const datas=[...new Set(J.map(j=>dk(pd(j.dt))))].sort();
@@ -405,6 +373,138 @@ function abaGrupos(){
   return h;
 }
 
+// ── RESULTADOS ESPN ──────────────────────────────────────────
+// Cache de placares: chave = "casa|visitante|data" → {cs, cv, st}
+let SCORES = {};
+let ultimaAtualizacao = null;
+
+function chave(c,v,dt){return`${c}|${v}|${dk(pd(dt))}`;}
+
+async function fetchESPN(){
+  const URL='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=200&dates=20260611-20260719';
+  const PROXY='https://api.allorigins.win/get?url=';
+  try{
+    const r=await fetch(PROXY+encodeURIComponent(URL),{signal:AbortSignal.timeout(8000)});
+    const w=await r.json();
+    const data=JSON.parse(w.contents);
+    const novo={};
+    (data.events||[]).forEach(evt=>{
+      const comp=evt.competitions?.[0];
+      const home=comp?.competitors?.find(c=>c.homeAway==='home');
+      const away=comp?.competitors?.find(c=>c.homeAway==='away');
+      if(!home||!away)return;
+      const sn=evt.status?.type?.name||'';
+      const completed=evt.status?.type?.completed;
+      const clock=evt.status?.displayClock||'';
+      let ss='p';
+      if(sn==='STATUS_IN_PROGRESS'||sn==='STATUS_HALFTIME')ss='v';
+      else if(completed||sn==='STATUS_FINAL')ss='e';
+      const homeName=home.team?.displayName||home.team?.name||'';
+      const awayName=away.team?.displayName||away.team?.name||'';
+      const dtESPN=evt.date?dk(new Date(evt.date)):'';
+      // salva por data + nomes normalizados
+      const k=`${dtESPN}`;
+      if(!novo[k])novo[k]=[];
+      novo[k].push({
+        hn:homeName,an:awayName,
+        cs:home.score??'',cv:away.score??'',
+        ss,clock
+      });
+    });
+    SCORES=novo;
+    ultimaAtualizacao=new Date();
+    return true;
+  }catch(e){
+    return false;
+  }
+}
+
+// Tenta casar jogo local com resultado ESPN pelo nome parcial + data
+function getScore(j){
+  const d=dk(pd(j.dt));
+  const lista=SCORES[d]||[];
+  // busca fuzzy: ESPN usa nomes em inglês, temos em português
+  // tentamos match por substring bidirecional
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  const nc=norm(j.c), nv=norm(j.v);
+  const match=lista.find(e=>{
+    const ehn=norm(e.hn), ean=norm(e.an);
+    const hMatch=ehn.includes(nc)||nc.includes(ehn)||ehn.split(' ').some(w=>w.length>3&&nc.includes(w));
+    const aMatch=ean.includes(nv)||nv.includes(ean)||ean.split(' ').some(w=>w.length>3&&nv.includes(w));
+    return hMatch&&aMatch;
+  });
+  return match||null;
+}
+
+function stReal(j){
+  const sc=getScore(j);
+  if(sc)return sc.ss;
+  return st(pd(j.dt));
+}
+
+function midHtml(j,grande=false){
+  const sc=getScore(j);
+  const ss=sc?sc.ss:st(pd(j.dt));
+  const o=pd(j.dt),eh=ish(o);
+  if(sc&&(ss==='e'||ss==='v')){
+    const scoreStr=`${sc.cs} × ${sc.cv}`;
+    if(grande)return`<div class="d-score">${scoreStr}</div>`;
+    return`<span class="jt-score">${scoreStr}</span>`;
+  }
+  if(ss==='e'){
+    if(grande)return`<div class="d-score">- × -</div>`;
+    return`<span class="jt-score">- × -</span>`;
+  }
+  if(grande)return`<div class="d-hora">${fhora(o)}</div>`;
+  return`<span class="jt-hora${eh?' hj':''}">${fhora(o)}</span>`;
+}
+
+function badgeHtml(j){
+  const sc=getScore(j);
+  const ss=sc?sc.ss:st(pd(j.dt));
+  const eh=ish(pd(j.dt));
+  if(ss==='v'){
+    const clock=sc?.clock?` ${sc.clock}'`:'';
+    return`<span class="bv">● AO VIVO${clock}</span>`;
+  }
+  if(ss==='e')return`<span class="be">Encerrado</span>`;
+  if(eh)return`<span class="bh">Hoje</span>`;
+  return`<span class="bp">${fcurta(pd(j.dt))}</span>`;
+}
+
+// ── RENDER COM SCORES ────────────────────────────────────────
+function destaque(){
+  const now=new Date();
+  const s=[...J].map(j=>({...j,o:pd(j.dt)})).sort((a,b)=>a.o-b.o);
+  let d=s.find(j=>stReal(j)==='v')||s.find(j=>j.o>=now)||s[s.length-1];
+  if(!d)return'';
+  const ss=stReal(d),eh=ish(d.o);
+  const stHtml=ss==='v'?`<span class="s-vivo pulse">AO VIVO</span>`:eh?`<span class="s-hoje">HOJE</span>`:`<span class="s-data">${fcurta(d.o)}</span>`;
+  return`<div class="destaque-wrap"><div class="destaque-card${ss==='v'?' vivo':''}${d.b?' br-next':''}">
+    <div class="destaque-top"><span class="d-label">${ss==='v'?'Ao vivo':ss==='e'?'Encerrado':'Próximo jogo'} · Grupo ${d.g}</span>${stHtml}</div>
+    <div class="destaque-times">
+      <div class="d-time"><span class="d-flag">${fl(d.c)}</span><span class="d-nome">${d.c}</span></div>
+      <div>${midHtml(d,true)}</div>
+      <div class="d-time"><span class="d-flag">${fl(d.v)}</span><span class="d-nome">${d.v}</span></div>
+    </div>
+    <div class="d-info">${d.l} · ${flong(d.o)}</div>
+  </div></div>`;
+}
+
+function jogoCard(j,sg=true){
+  const meta=sg?`Grupo ${j.g} · R${j.r} · ${j.l}`:`R${j.r} · ${j.l}`;
+  const ss=stReal(j);
+  return`<div class="jc${j.b?' br':''}${ss==='v'?' vv':''}">
+    <div class="jc-meta"><span class="jc-grp">${meta}</span>${badgeHtml(j)}</div>
+    <div class="jc-row">
+      <div class="jt"><span class="jt-flag">${fl(j.c)}</span><span class="jt-nome">${j.c}</span></div>
+      <div class="jt-mid">${midHtml(j)}</div>
+      <div class="jt v"><span class="jt-flag">${fl(j.v)}</span><span class="jt-nome">${j.v}</span></div>
+    </div>
+  </div>`;
+}
+
+// ── NAVEGAÇÃO ────────────────────────────────────────────────
 let aba='jogos';
 function setAba(a){
   aba=a;
@@ -416,8 +516,15 @@ function setAba(a){
   m.scrollTop=0;
 }
 
-setAba('jogos');
-setInterval(()=>setAba(aba),60000);
+async function refresh(){
+  await fetchESPN();
+  setAba(aba);
+}
+
+// Init
+fetchESPN().then(()=>setAba('jogos'));
+// Atualiza a cada 2 minutos
+setInterval(refresh,120000);
 </script>
 </body>
 </html>
