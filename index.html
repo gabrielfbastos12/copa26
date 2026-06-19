@@ -443,7 +443,7 @@ function getScore(j){
   // busca fuzzy: ESPN usa nomes em inglês, temos em português
   // tentamos match por substring bidirecional
   const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-  const nc=norm(j.c), nv=norm(j.v);
+  const nc=norm(PT_EN[j.c]||j.c), nv=norm(PT_EN[j.v]||j.v);
   const match=lista.find(e=>{
     const ehn=norm(e.hn), ean=norm(e.an);
     const hMatch=ehn.includes(nc)||nc.includes(ehn)||ehn.split(' ').some(w=>w.length>3&&nc.includes(w));
@@ -452,6 +452,21 @@ function getScore(j){
   });
   return match||null;
 }
+
+const PT_EN={
+  'Brasil':'Brazil','Marrocos':'Morocco','Escócia':'Scotland','Alemanha':'Germany',
+  'Holanda':'Netherlands','Suíça':'Switzerland','Bélgica':'Belgium','França':'France',
+  'Espanha':'Spain','Coreia do Sul':'South Korea','República Tcheca':'Czech Republic',
+  'Bósnia e Herzegovina':'Bosnia','Estados Unidos':'United States','Curaçao':'Curacao',
+  'Costa do Marfim':'Ivory Coast','Tunísia':'Tunisia','Cabo Verde':'Cape Verde',
+  'Arábia Saudita':'Saudi Arabia','Irã':'Iran','Nova Zelândia':'New Zealand',
+  'Noruega':'Norway','Iraque':'Iraq','Inglaterra':'England','Croácia':'Croatia',
+  'Gana':'Ghana','Panamá':'Panama','Uzbequistão':'Uzbekistan','Colômbia':'Colombia',
+  'RD Congo':'DR Congo','Uruguai':'Uruguay','Egito':'Egypt','África do Sul':'South Africa',
+  'Jordânia':'Jordan','Argélia':'Algeria','Equador':'Ecuador','Japão':'Japan',
+  'México':'Mexico','Turquia':'Turkey','Paraguai':'Paraguay','Canadá':'Canada',
+  'Catar':'Qatar','Suécia':'Sweden','Áustria':'Austria',
+};
 
 function stReal(j){
   const sc=getScore(j);
