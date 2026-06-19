@@ -34,16 +34,16 @@ HTML puro + CSS + JS vanilla. Zero dependências, zero build. Fonte: Barlow Cond
 ## Grupos completos (48 seleções)
 - **A:** México, Coreia do Sul, África do Sul, República Tcheca
 - **B:** Canadá, Suíça, Catar, Bósnia e Herzegovina
-- **C:** Estados Unidos, Austrália, Paraguai, Turquia
-- **D:** Brasil, Marrocos, Escócia, Haiti
+- **C:** Brasil, Marrocos, Escócia, Haiti
+- **D:** Estados Unidos, Austrália, Paraguai, Turquia
 - **E:** Alemanha, Costa do Marfim, Equador, Curaçao
 - **F:** Holanda, Japão, Tunísia, Suécia
-- **G:** Espanha, Bélgica, Cabo Verde, Irã
-- **H:** Argentina, Áustria, Argélia, Jordânia
+- **G:** Bélgica, Egito, Irã, Nova Zelândia
+- **H:** Espanha, Cabo Verde, Arábia Saudita, Uruguai
 - **I:** França, Senegal, Noruega, Iraque
-- **J:** Inglaterra, Croácia, Gana, Panamá
+- **J:** Argentina, Argélia, Áustria, Jordânia
 - **K:** Portugal, Uzbequistão, Colômbia, RD Congo
-- **L:** Uruguai, Arábia Saudita, Egito, Nova Zelândia
+- **L:** Inglaterra, Croácia, Gana, Panamá
 
 ## Placares — arquitetura atual (funcionando)
 

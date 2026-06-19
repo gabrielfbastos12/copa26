@@ -74,6 +74,8 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:'Barlow'
 .jt-score{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;color:var(--txt);letter-spacing:.05em;}
 .jt-hora{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;color:var(--txt2);}
 .jt-hora.hj{color:var(--ouro);}
+.jc-tv{font-size:10px;color:var(--txt2);margin-top:5px;padding-top:5px;border-top:1px solid var(--borda2);}
+.mm-tv{font-size:10px;color:var(--txt2);margin-top:5px;padding-top:5px;border-top:1px solid var(--borda2);}
 
 /* GRUPOS */
 .g-bloco{margin:14px 14px 0;}
@@ -149,20 +151,20 @@ const J=[
   {g:'A',r:1,dt:'2026-06-11T16:00',c:'México',v:'África do Sul',l:'Cidade do México'},
   {g:'A',r:1,dt:'2026-06-11T23:00',c:'Coreia do Sul',v:'República Tcheca',l:'Guadalajara'},
   {g:'B',r:1,dt:'2026-06-12T16:00',c:'Canadá',v:'Bósnia e Herzegovina',l:'Toronto'},
-  {g:'C',r:1,dt:'2026-06-12T22:00',c:'Estados Unidos',v:'Paraguai',l:'Los Angeles'},
-  {g:'C',r:1,dt:'2026-06-13T01:00',c:'Austrália',v:'Turquia',l:'Vancouver'},
+  {g:'D',r:1,dt:'2026-06-12T22:00',c:'Estados Unidos',v:'Paraguai',l:'Los Angeles'},
+  {g:'D',r:1,dt:'2026-06-13T01:00',c:'Austrália',v:'Turquia',l:'Vancouver'},
   {g:'B',r:1,dt:'2026-06-13T16:00',c:'Catar',v:'Suíça',l:'San Francisco'},
-  {g:'D',r:1,dt:'2026-06-13T19:00',c:'Brasil',v:'Marrocos',l:'Nova York/NJ',b:1},
-  {g:'D',r:1,dt:'2026-06-13T22:00',c:'Haiti',v:'Escócia',l:'Boston'},
+  {g:'C',r:1,dt:'2026-06-13T19:00',c:'Brasil',v:'Marrocos',l:'Nova York/NJ',b:1},
+  {g:'C',r:1,dt:'2026-06-13T22:00',c:'Haiti',v:'Escócia',l:'Boston'},
   {g:'E',r:1,dt:'2026-06-14T14:00',c:'Alemanha',v:'Curaçao',l:'Houston'},
   {g:'F',r:1,dt:'2026-06-14T17:00',c:'Holanda',v:'Japão',l:'Dallas'},
   {g:'E',r:1,dt:'2026-06-14T20:00',c:'Costa do Marfim',v:'Equador',l:'Filadélfia'},
   {g:'F',r:1,dt:'2026-06-14T23:00',c:'Suécia',v:'Tunísia',l:'Monterrey'},
-  {g:'G',r:1,dt:'2026-06-15T13:00',c:'Espanha',v:'Cabo Verde',l:'Atlanta'},
+  {g:'H',r:1,dt:'2026-06-15T13:00',c:'Espanha',v:'Cabo Verde',l:'Atlanta'},
   {g:'G',r:1,dt:'2026-06-15T16:00',c:'Bélgica',v:'Egito',l:'Seattle'},
-  {g:'K',r:1,dt:'2026-06-15T19:00',c:'Arábia Saudita',v:'Uruguai',l:'Miami'},
+  {g:'H',r:1,dt:'2026-06-15T19:00',c:'Arábia Saudita',v:'Uruguai',l:'Miami'},
   {g:'G',r:1,dt:'2026-06-15T22:00',c:'Irã',v:'Nova Zelândia',l:'Los Angeles'},
-  {g:'H',r:1,dt:'2026-06-16T14:00',c:'Argentina',v:'Argélia',l:'Kansas City'},
+  {g:'J',r:1,dt:'2026-06-16T14:00',c:'Argentina',v:'Argélia',l:'Kansas City'},
   {g:'I',r:1,dt:'2026-06-16T16:00',c:'França',v:'Senegal',l:'Nova York/NJ'},
   {g:'I',r:1,dt:'2026-06-16T19:00',c:'Iraque',v:'Noruega',l:'Boston'},
   {g:'J',r:1,dt:'2026-06-17T01:00',c:'Áustria',v:'Jordânia',l:'San Francisco'},
@@ -174,19 +176,19 @@ const J=[
   {g:'B',r:2,dt:'2026-06-18T16:00',c:'Suíça',v:'Bósnia e Herzegovina',l:'Los Angeles'},
   {g:'B',r:2,dt:'2026-06-18T19:00',c:'Canadá',v:'Catar',l:'Vancouver'},
   {g:'A',r:2,dt:'2026-06-18T22:00',c:'México',v:'Coreia do Sul',l:'Guadalajara'},
-  {g:'C',r:2,dt:'2026-06-19T01:00',c:'Turquia',v:'Paraguai',l:'San Francisco'},
-  {g:'C',r:2,dt:'2026-06-19T16:00',c:'Estados Unidos',v:'Austrália',l:'Seattle'},
-  {g:'D',r:2,dt:'2026-06-19T19:00',c:'Escócia',v:'Marrocos',l:'Boston'},
-  {g:'D',r:2,dt:'2026-06-19T22:00',c:'Brasil',v:'Haiti',l:'Filadélfia',b:1},
+  {g:'D',r:2,dt:'2026-06-20T00:00',c:'Turquia',v:'Paraguai',l:'San Francisco'},
+  {g:'D',r:2,dt:'2026-06-19T16:00',c:'Estados Unidos',v:'Austrália',l:'Seattle'},
+  {g:'C',r:2,dt:'2026-06-19T19:00',c:'Escócia',v:'Marrocos',l:'Boston'},
+  {g:'C',r:2,dt:'2026-06-19T22:00',c:'Brasil',v:'Haiti',l:'Filadélfia',b:1},
   {g:'F',r:2,dt:'2026-06-20T14:00',c:'Holanda',v:'Suécia',l:'Houston'},
   {g:'E',r:2,dt:'2026-06-20T17:00',c:'Alemanha',v:'Costa do Marfim',l:'Toronto'},
   {g:'E',r:2,dt:'2026-06-20T21:00',c:'Equador',v:'Curaçao',l:'Kansas City'},
   {g:'F',r:2,dt:'2026-06-21T01:00',c:'Tunísia',v:'Japão',l:'Monterrey'},
-  {g:'G',r:2,dt:'2026-06-21T13:00',c:'Espanha',v:'Arábia Saudita',l:'Atlanta'},
+  {g:'H',r:2,dt:'2026-06-21T13:00',c:'Espanha',v:'Arábia Saudita',l:'Atlanta'},
   {g:'G',r:2,dt:'2026-06-21T16:00',c:'Bélgica',v:'Irã',l:'Los Angeles'},
-  {g:'K',r:2,dt:'2026-06-21T19:00',c:'Uruguai',v:'Cabo Verde',l:'Miami'},
+  {g:'H',r:2,dt:'2026-06-21T19:00',c:'Uruguai',v:'Cabo Verde',l:'Miami'},
   {g:'G',r:2,dt:'2026-06-21T22:00',c:'Nova Zelândia',v:'Egito',l:'Vancouver'},
-  {g:'H',r:2,dt:'2026-06-22T14:00',c:'Argentina',v:'Áustria',l:'Dallas'},
+  {g:'J',r:2,dt:'2026-06-22T14:00',c:'Argentina',v:'Áustria',l:'Dallas'},
   {g:'I',r:2,dt:'2026-06-22T18:00',c:'França',v:'Iraque',l:'Filadélfia'},
   {g:'I',r:2,dt:'2026-06-22T21:00',c:'Noruega',v:'Senegal',l:'Nova York/NJ'},
   {g:'J',r:2,dt:'2026-06-23T00:00',c:'Jordânia',v:'Argélia',l:'San Francisco'},
@@ -196,45 +198,43 @@ const J=[
   {g:'K',r:2,dt:'2026-06-23T23:00',c:'Colômbia',v:'RD Congo',l:'Guadalajara'},
   {g:'B',r:3,dt:'2026-06-24T16:00',c:'Suíça',v:'Canadá',l:'Vancouver'},
   {g:'B',r:3,dt:'2026-06-24T16:00',c:'Bósnia e Herzegovina',v:'Catar',l:'Seattle'},
-  {g:'D',r:3,dt:'2026-06-24T19:00',c:'Escócia',v:'Brasil',l:'Miami',b:1},
-  {g:'D',r:3,dt:'2026-06-24T19:00',c:'Marrocos',v:'Haiti',l:'Atlanta'},
+  {g:'C',r:3,dt:'2026-06-24T19:00',c:'Escócia',v:'Brasil',l:'Miami',b:1},
+  {g:'C',r:3,dt:'2026-06-24T19:00',c:'Marrocos',v:'Haiti',l:'Atlanta'},
   {g:'A',r:3,dt:'2026-06-24T22:00',c:'República Tcheca',v:'México',l:'Cidade do México'},
   {g:'A',r:3,dt:'2026-06-24T22:00',c:'África do Sul',v:'Coreia do Sul',l:'Monterrey'},
   {g:'E',r:3,dt:'2026-06-25T17:00',c:'Equador',v:'Alemanha',l:'Nova York/NJ'},
   {g:'E',r:3,dt:'2026-06-25T17:00',c:'Curaçao',v:'Costa do Marfim',l:'Filadélfia'},
   {g:'F',r:3,dt:'2026-06-25T20:00',c:'Japão',v:'Suécia',l:'Dallas'},
   {g:'F',r:3,dt:'2026-06-25T20:00',c:'Tunísia',v:'Holanda',l:'Kansas City'},
-  {g:'C',r:3,dt:'2026-06-25T23:00',c:'Turquia',v:'Estados Unidos',l:'Los Angeles'},
-  {g:'C',r:3,dt:'2026-06-25T23:00',c:'Paraguai',v:'Austrália',l:'San Francisco'},
+  {g:'D',r:3,dt:'2026-06-25T23:00',c:'Turquia',v:'Estados Unidos',l:'Los Angeles'},
+  {g:'D',r:3,dt:'2026-06-25T23:00',c:'Paraguai',v:'Austrália',l:'San Francisco'},
   {g:'I',r:3,dt:'2026-06-26T16:00',c:'Noruega',v:'França',l:'Boston'},
   {g:'I',r:3,dt:'2026-06-26T16:00',c:'Senegal',v:'Iraque',l:'Toronto'},
-  {g:'G',r:3,dt:'2026-06-26T21:00',c:'Cabo Verde',v:'Arábia Saudita',l:'Houston'},
-  {g:'K',r:3,dt:'2026-06-26T21:00',c:'Uruguai',v:'Espanha',l:'Guadalajara'},
+  {g:'H',r:3,dt:'2026-06-26T21:00',c:'Cabo Verde',v:'Arábia Saudita',l:'Houston'},
+  {g:'H',r:3,dt:'2026-06-26T21:00',c:'Uruguai',v:'Espanha',l:'Guadalajara'},
   {g:'G',r:3,dt:'2026-06-27T00:00',c:'Egito',v:'Irã',l:'Seattle'},
-  {g:'K',r:3,dt:'2026-06-27T00:00',c:'Nova Zelândia',v:'Bélgica',l:'Vancouver'},
+  {g:'G',r:3,dt:'2026-06-27T00:00',c:'Nova Zelândia',v:'Bélgica',l:'Vancouver'},
   {g:'L',r:3,dt:'2026-06-27T18:00',c:'Panamá',v:'Inglaterra',l:'Nova York/NJ'},
   {g:'L',r:3,dt:'2026-06-27T18:00',c:'Croácia',v:'Gana',l:'Filadélfia'},
   {g:'K',r:3,dt:'2026-06-27T20:30',c:'Colômbia',v:'Portugal',l:'Miami'},
   {g:'K',r:3,dt:'2026-06-27T20:30',c:'RD Congo',v:'Uzbequistão',l:'Atlanta'},
+  {g:'J',r:3,dt:'2026-06-27T23:00',c:'Argentina',v:'Jordânia',l:'Dallas'},
   {g:'J',r:3,dt:'2026-06-27T23:00',c:'Argélia',v:'Áustria',l:'Kansas City'},
-  {g:'J',r:3,dt:'2026-06-27T23:00',c:'Jordânia',v:'Argentina',l:'Dallas'},
-  {g:'H',r:3,dt:'2026-06-27T16:00',c:'Argentina',v:'Argélia',l:'Kansas City'},
-  {g:'H',r:3,dt:'2026-06-27T16:00',c:'Áustria',v:'Jordânia',l:'Dallas'},
 ];
 
 const GRUPOS={
   A:{t:['México','Coreia do Sul','África do Sul','República Tcheca']},
   B:{t:['Canadá','Suíça','Catar','Bósnia e Herzegovina']},
-  C:{t:['Estados Unidos','Austrália','Paraguai','Turquia']},
-  D:{t:['Brasil','Marrocos','Escócia','Haiti']},
+  C:{t:['Brasil','Marrocos','Escócia','Haiti']},
+  D:{t:['Estados Unidos','Austrália','Paraguai','Turquia']},
   E:{t:['Alemanha','Costa do Marfim','Equador','Curaçao']},
   F:{t:['Holanda','Japão','Tunísia','Suécia']},
-  G:{t:['Espanha','Bélgica','Cabo Verde','Irã']},
-  H:{t:['Argentina','Áustria','Argélia','Jordânia']},
+  G:{t:['Bélgica','Egito','Irã','Nova Zelândia']},
+  H:{t:['Espanha','Cabo Verde','Arábia Saudita','Uruguai']},
   I:{t:['França','Senegal','Noruega','Iraque']},
-  J:{t:['Inglaterra','Croácia','Gana','Panamá']},
+  J:{t:['Argentina','Argélia','Áustria','Jordânia']},
   K:{t:['Portugal','Uzbequistão','Colômbia','RD Congo']},
-  L:{t:['Uruguai','Arábia Saudita','Egito','Nova Zelândia']},
+  L:{t:['Inglaterra','Croácia','Gana','Panamá']},
 };
 
 const MM=[
@@ -334,6 +334,8 @@ window.fd=function(f,btn){
     else h='<div class="vazio">Nenhum jogo nesta data.</div>';
   }
   lj.innerHTML=h;
+  if(f==='todos')scrollToNow();
+  else window.scrollTo(0,0);
 };
 
 function abaMataMata(){
@@ -350,6 +352,7 @@ function abaMataMata(){
           <div class="mm-mid">${mid}</div>
           <div class="mm-t v"><span class="jt-flag">${fl(j.v)}</span><span class="mm-nome">${j.v}</span></div>
         </div>
+        <div class="mm-tv">${tvMM(bloco.fase)}</div>
       </div>`;
     });
   });
@@ -438,19 +441,22 @@ async function fetchESPN(){
 
 // Tenta casar jogo local com resultado ESPN pelo nome parcial + data
 function getScore(j){
-  const d=dk(pd(j.dt));
-  const lista=SCORES[d]||[];
+  const o=pd(j.dt);
+  const d=dk(o);
+  // busca também dias adjacentes para cobrir edge cases de fuso horário
+  const prev=dk(new Date(o.getTime()-86400000));
+  const next=dk(new Date(o.getTime()+86400000));
+  const lista=[...(SCORES[d]||[]),...(SCORES[prev]||[]),...(SCORES[next]||[])];
+  if(!lista.length)return null;
   // busca fuzzy: ESPN usa nomes em inglês, temos em português
-  // tentamos match por substring bidirecional
   const norm=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
   const nc=norm(PT_EN[j.c]||j.c), nv=norm(PT_EN[j.v]||j.v);
-  const match=lista.find(e=>{
+  return lista.find(e=>{
     const ehn=norm(e.hn), ean=norm(e.an);
     const hMatch=ehn.includes(nc)||nc.includes(ehn)||ehn.split(' ').some(w=>w.length>3&&nc.includes(w));
     const aMatch=ean.includes(nv)||nv.includes(ean)||ean.split(' ').some(w=>w.length>3&&nv.includes(w));
     return hMatch&&aMatch;
-  });
-  return match||null;
+  })||null;
 }
 
 const PT_EN={
@@ -478,8 +484,8 @@ function midHtml(j,grande=false){
   const sc=getScore(j);
   const ss=sc?sc.ss:st(pd(j.dt));
   const o=pd(j.dt),eh=ish(o);
-  if(sc&&(ss==='e'||ss==='v')){
-    const scoreStr=`${sc.cs} × ${sc.cv}`;
+  if(sc&&(ss==='e'||ss==='v')&&(sc.cs!==''||sc.cv!=='')){
+    const scoreStr=`${sc.cs!==''?sc.cs:'0'} × ${sc.cv!==''?sc.cv:'0'}`;
     if(grande)return`<div class="d-score">${scoreStr}</div>`;
     return`<span class="jt-score">${scoreStr}</span>`;
   }
@@ -504,6 +510,16 @@ function badgeHtml(j){
   return`<span class="bp">${fcurta(pd(j.dt))}</span>`;
 }
 
+function tvBR(j){
+  if(j.b) return '📺 Globo · SporTV · CazéTV';
+  return '📺 SporTV · CazéTV';
+}
+
+function tvMM(fase){
+  if(/Quartas|Semifinais|3º lugar|Final/.test(fase)) return '📺 Globo · SporTV · CazéTV';
+  return '📺 SporTV · CazéTV';
+}
+
 // ── RENDER COM SCORES ────────────────────────────────────────
 function destaque(){
   const now=new Date();
@@ -520,20 +536,35 @@ function destaque(){
       <div class="d-time"><span class="d-flag">${fl(d.v)}</span><span class="d-nome">${d.v}</span></div>
     </div>
     <div class="d-info">${d.l} · ${flong(d.o)}</div>
+    <div class="jc-tv">${tvBR(d)}</div>
   </div></div>`;
 }
 
 function jogoCard(j,sg=true){
   const meta=sg?`Grupo ${j.g} · R${j.r} · ${j.l}`:`R${j.r} · ${j.l}`;
   const ss=stReal(j);
-  return`<div class="jc${j.b?' br':''}${ss==='v'?' vv':''}">
+  return`<div class="jc${j.b?' br':''}${ss==='v'?' vv':''}" data-dt="${j.dt}">
     <div class="jc-meta"><span class="jc-grp">${meta}</span>${badgeHtml(j)}</div>
     <div class="jc-row">
       <div class="jt"><span class="jt-flag">${fl(j.c)}</span><span class="jt-nome">${j.c}</span></div>
       <div class="jt-mid">${midHtml(j)}</div>
       <div class="jt v"><span class="jt-flag">${fl(j.v)}</span><span class="jt-nome">${j.v}</span></div>
     </div>
+    <div class="jc-tv">${tvBR(j)}</div>
   </div>`;
+}
+
+function scrollToNow(){
+  const now=new Date();
+  const cards=[...document.querySelectorAll('#lj .jc[data-dt]')];
+  if(!cards.length)return;
+  let target=cards.find(c=>{
+    const dt=pd(c.dataset.dt);
+    return now>=dt&&now<=new Date(dt.getTime()+120*60000);
+  });
+  if(!target)target=cards.find(c=>pd(c.dataset.dt)>now);
+  if(!target)target=cards[cards.length-1];
+  target.scrollIntoView({behavior:'instant',block:'center'});
 }
 
 // ── NAVEGAÇÃO ────────────────────────────────────────────────
@@ -542,10 +573,9 @@ function setAba(a){
   aba=a;
   ['jogos','matamata','grupos'].forEach(x=>document.getElementById('btn-'+x).classList.toggle('ativo',x===a));
   const m=document.getElementById('main');
-  if(a==='jogos')m.innerHTML=abaJogos();
-  else if(a==='matamata')m.innerHTML=abaMataMata();
-  else m.innerHTML=abaGrupos();
-  m.scrollTop=0;
+  if(a==='jogos'){m.innerHTML=abaJogos();scrollToNow();}
+  else if(a==='matamata'){m.innerHTML=abaMataMata();window.scrollTo(0,0);}
+  else{m.innerHTML=abaGrupos();window.scrollTo(0,0);}
 }
 
 async function refresh(){
