@@ -359,14 +359,38 @@ function abaMataMata(){
   return h;
 }
 
+function calcStandings(grupo){
+  const teams={};
+  GRUPOS[grupo].t.forEach(t=>{teams[t]={pj:0,v:0,e:0,d:0,gf:0,gc:0};});
+  J.filter(j=>j.g===grupo).forEach(j=>{
+    const sc=getScore(j);
+    if(!sc||sc.ss!=='e')return;
+    const cs=parseInt(sc.cs,10),cv=parseInt(sc.cv,10);
+    if(isNaN(cs)||isNaN(cv))return;
+    const tc=teams[j.c],tv=teams[j.v];
+    if(!tc||!tv)return;
+    tc.pj++;tv.pj++;
+    tc.gf+=cs;tc.gc+=cv;
+    tv.gf+=cv;tv.gc+=cs;
+    if(cs>cv){tc.v++;tv.d++;}
+    else if(cs<cv){tv.v++;tc.d++;}
+    else{tc.e++;tv.e++;}
+  });
+  return Object.entries(teams)
+    .map(([t,s])=>({t,...s,sg:s.gf-s.gc,pts:s.v*3+s.e}))
+    .sort((a,b)=>b.pts-a.pts||b.sg-a.sg||b.gf-a.gf||a.t.localeCompare(b.t));
+}
+
 function abaGrupos(){
   let h='';
-  Object.entries(GRUPOS).forEach(([l,g])=>{
+  Object.entries(GRUPOS).forEach(([l])=>{
+    const standings=calcStandings(l);
     h+=`<div class="g-bloco"><div class="g-header"><span class="g-tag">GRUPO ${l}</span></div>`;
     h+=`<table class="tabela"><thead><tr><th style="width:44%">Seleção</th><th class="num">PJ</th><th class="num">V</th><th class="num">E</th><th class="num">D</th><th class="num">SG</th><th class="pts">PTS</th></tr></thead><tbody>`;
-    g.t.forEach((t,i)=>{
+    standings.forEach((s,i)=>{
       const dot=i<2?`<span class="cl-dot"></span>`:'';
-      h+=`<tr><td>${dot}<span style="font-size:14px;margin-right:4px">${fl(t)}</span>${t}</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="pts">0</td></tr>`;
+      const sg=s.sg>0?`+${s.sg}`:s.sg;
+      h+=`<tr><td>${dot}<span style="font-size:14px;margin-right:4px">${fl(s.t)}</span>${s.t}</td><td class="num">${s.pj}</td><td class="num">${s.v}</td><td class="num">${s.e}</td><td class="num">${s.d}</td><td class="num">${sg}</td><td class="pts">${s.pts}</td></tr>`;
     });
     h+=`</tbody></table>`;
     h+=`<div class="g-jogos-lbl">Jogos do grupo</div>`;
