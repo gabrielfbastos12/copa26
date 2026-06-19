@@ -380,28 +380,35 @@ let ultimaAtualizacao = null;
 
 function chave(c,v,dt){return`${c}|${v}|${dk(pd(dt))}`;}
 
+const BACKEND='https://SEU_PROJETO.vercel.app/api/scores';
+
 async function fetchESPN(){
   const ESPN='https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?limit=200&dates=20260611-20260719';
-  const PROXIES=[
-    u=>`https://api.allorigins.win/get?url=${encodeURIComponent(u)}`,
-    u=>`https://corsproxy.io/?${encodeURIComponent(u)}`,
-    u=>`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(u)}`,
+
+  const fontes=[
+    // 1. Backend próprio (Vercel) — sem restrição CORS
+    async()=>{
+      const r=await fetch(BACKEND,{signal:AbortSignal.timeout(8000)});
+      if(!r.ok)throw new Error('backend '+r.status);
+      return r.json();
+    },
+    // 2. Proxies públicos como fallback
+    async()=>{
+      const r=await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(ESPN)}`,{signal:AbortSignal.timeout(8000)});
+      if(!r.ok)throw new Error('allorigins '+r.status);
+      const w=await r.json();
+      return JSON.parse(w.contents);
+    },
+    async()=>{
+      const r=await fetch(`https://corsproxy.io/?${encodeURIComponent(ESPN)}`,{signal:AbortSignal.timeout(8000)});
+      if(!r.ok)throw new Error('corsproxy '+r.status);
+      return r.json();
+    },
   ];
 
-  // Tenta cada proxy em sequência
-  for(const proxyFn of PROXIES){
+  for(const fn of fontes){
     try{
-      const r=await fetch(proxyFn(ESPN),{signal:AbortSignal.timeout(8000)});
-      if(!r.ok)continue;
-      const raw=await r.text();
-      let data;
-      try{
-        const w=JSON.parse(raw);
-        // allorigins envolve em {contents:...}
-        data=w.contents?JSON.parse(w.contents):w;
-      }catch{
-        data=JSON.parse(raw);
-      }
+      const data=await fn();
       if(!data?.events)continue;
       const novo={};
       data.events.forEach(evt=>{
